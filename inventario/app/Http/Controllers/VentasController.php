@@ -39,16 +39,25 @@ class VentasController extends Controller
 
     public function store(VentasFormRequest $request){
     	$ventas = new Ventas;
-        $inventario = new Inventario;
-        if($ventas->idProductoVentaFK == $inventario->idProductoInventarioFK){
+        $inventario=DB::table('tb_inventario')->get();
     	$ventas->idProductoVentaFK=$request->get('idProductoVentaFK');
-    	$ventas->cantidadVenta=$request->get('cantidadVenta');
-    	$ventas->precioTotalVenta=$request->get('precioTotalVenta');
-        $inventario->cantidadInventario = $inventario->cantidadInventario - $ventas->cantidadVenta;
-    	$ventas->save();
-        $inventario->update();
-        return Redirect::to('inventario/ventas');
+        $v = (int)$ventas->idProductoVentaFK;
+        var_dump($v);
+        foreach ($inventario as $inv) {
+            var_dump($inv->idProductoInventarioFK);
+           if($v==$inv->idProductoInventarioFK){
+            $ventas->precioProductoVenta=$inv->precioUnitarioInventario;
+            }
         }
+    	$ventas->cantidadVenta=$request->get('cantidadVenta');
+    	$ventas->precioTotalVenta=$ventas->precioProductoVenta*$ventas->cantidadVenta;
+        foreach ($inventario as $inv) {
+        if($v==$inv->idProductoInventarioFK){
+        $inv->cantidadInventario = $inv->cantidadInventario - $ventas->cantidadVenta;
+        }
+        }
+    	$ventas->save();
+        return Redirect::to('inventario/ventas');
     }
 
     public function show($id){

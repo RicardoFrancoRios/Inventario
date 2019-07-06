@@ -60,6 +60,7 @@ class InventarioController extends Controller
         $inventario=Inventario::findOrFail($id);
         $inventario->idProductoInventarioFK=$request->get('idProductoInventarioFK');
         $inventario->cantidadInventario=$request->get('cantidadInventario');
+        $inventario->precioUnitarioInventario=$request->get('precioUnitarioInventario');
         $inventario->loteInventario=$request->get('loteInventario');
         $inventario->fechaVencimientoInventario =$request->get('fechaVencimientoInventario') ;
         $inventario->estado = "1";

@@ -14,6 +14,7 @@
 					<thead>
 						<th>Id Venta</th>
 						<th>Producto</th>
+						<th>Precio</th>
 						<th>Cantidad</th>
 						<th>Precio Total</th>
 						<!--<th>Opciones</th>-->
@@ -22,6 +23,7 @@
 					<tr>
 						<td>{{$venta->idVentaPK}}</td>
 						<td>{{$venta->nombreProducto}}</td>
+						<td>{{$venta->precioProductoVenta}}</td>
 						<td>{{$venta->cantidadVenta}}</td>
 						<td>{{$venta->precioTotalVenta}}</td>
 						<!--<td>

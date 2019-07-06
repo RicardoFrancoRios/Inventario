@@ -50,12 +50,16 @@
 					<input type="text" name="cantidadInventario" class="form-control" value="{{$inventario->cantidadInventario}}" onkeypress="return numeros(event)" onpaste="return false">
 				</div>
 				<div class="form-group">
+					<label for="precioUnitarioInventario"> Precio </label>
+					<input type="text" name="precioUnitarioInventario" class="form-control" value="{{$inventario->precioUnitarioInventario}}" onkeypress="return numeros(event)" onpaste="return false">
+				</div>
+				<div class="form-group">
 					<label for="loteInventario"> Lote </label>
 					<input type="text" name="loteInventario" class="form-control" value="{{$inventario->loteInventario}}">
 				</div>
 				<div class="form-group">
 					<label for="fechaVencimientoInventario"> Fecha Vencimiento </label>
-					<input type="text" name="fechaVencimientoInventario" class="form-control" placeholder="AAAA-MM-DD" value="{{$inventario->fechaVencimientoInventario}}" onkeypress="return numeros(event)" onpaste="return false">
+					<input type="date" name="fechaVencimientoInventario" class="form-control" placeholder="AAAA-MM-DD" value="{{$inventario->fechaVencimientoInventario}}" onkeypress="return numeros(event)" onpaste="return false">
 				</div>
 				<div class="form-group">
 					<button class="btn btn-primary" type="submit"> Modificar</button>

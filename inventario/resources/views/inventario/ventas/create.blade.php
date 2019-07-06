@@ -46,10 +46,6 @@
 					<input type="text" name="cantidadVenta" class="form-control" onkeypress="return numeros(event)" onpaste="return false">
 				</div>
 				<div class="form-group">
-					<label for="precioTotalVenta"> Precio Total </label>
-					<input type="text" name="precioTotalVenta" class="form-control" onkeypress="return numeros(event)" onpaste="return false">
-				</div>
-				<div class="form-group">
 					<button class="btn btn-primary" type="submit"> Comprar</button>
 					<a class="btn btn-danger" href="{{ URL::previous() }}">Cancelar</a>
 				</div>

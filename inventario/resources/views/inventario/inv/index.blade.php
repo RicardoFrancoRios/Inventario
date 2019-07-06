@@ -2,7 +2,7 @@
 @section('contenido')
 	<div class="row">
 		<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-			<h3>Listado de ventas</h3>
+			<h3>Listado de Stock</h3>
 			@include('inventario.inv.search')
 		</div>
 	</div>
@@ -14,6 +14,7 @@
 					<thead>
 						<th>Id Inventario</th>
 						<th>Producto</th>
+						<th>Precio</th>
 						<th>Cantidad</th>
 						<th>Lote</th>
 						<th>Fecha de Vencimiento</th>
@@ -23,6 +24,7 @@
 					<tr>
 						<td>{{$inv->idInventario}}</td>
 						<td>{{$inv->nombreProducto}}</td>
+						<td>{{$inv->precioUnitarioInventario}}</td>
 						<td>{{$inv->cantidadInventario}}</td>
 						<td>{{$inv->loteInventario}}</td>
 						<td>{{$inv->fechaVencimientoInventario}}</td>

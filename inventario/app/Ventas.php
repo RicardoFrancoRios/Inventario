@@ -14,6 +14,7 @@ class Ventas extends Model
 
    protected $fillable=[
    		'idProductoVentaFK',
+   		'precioProductoVenta',
    		'cantidadVenta',
    		'precioTotalVenta',
    ];
